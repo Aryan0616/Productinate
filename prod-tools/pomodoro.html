@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="./pomodoro.css">
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <p>"Pomodo-more" 🍅—helping you focus and get more done, one tomato at a time!</p>
+
+    <div id="Pomodoro">
+        <h2 id="timer-label">Work Time</h2>
+        <div id="timer-display">25:00</div>
+        <div class="timer-controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn" disabled>Pause</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div class="timer-settings">
+            <h3>Customize Timer</h3>
+            <label>
+                Work Time (minutes):
+                <input type="number" id="work-time" value="25" min="1">
+            </label>
+            <label>
+                Rest Time (minutes):
+                <input type="number" id="rest-time" value="5" min="1">
+            </label>
+        </div>
+    </div>
+
+    <script src="./pomodoro.js"></script>
+</body>
+</html>
