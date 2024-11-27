@@ -2,6 +2,8 @@ let workTime = 25;
 let restTime = 5;  
 let currentPhase = "work";
 let timeRemaining = workTime * 60; 
+let timerInterval = null;
+
 
 
 const timerDisplay = document.getElementById("timer-display");
