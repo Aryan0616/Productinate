@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const API_URL = "https://productintaebackend1-0.onrender.com";
     const todoListContainer = document.querySelector("#to-dolist");
     const inputForm = document.createElement("form");
     inputForm.innerHTML = `
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.insertBefore(inputForm, todoListContainer);
 
     async function fetchTasks() {
-        const response = await fetch("http://localhost:3000/tasks");
+        const response = await fetch(`${API_URL}/tasks`);
         const tasks = await response.json();
         tasks.forEach(renderTask);
     }
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const taskInput = document.getElementById("task-input");
         const newTask = { description: taskInput.value, status: "pending" };
 
-        const response = await fetch("http://localhost:3000/tasks", {
+        const response = await fetch(`${API_URL}/tasks`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newTask),
@@ -49,13 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (e.target.tagName === "INPUT") {
             const newStatus = e.target.checked ? "done" : "pending";
-            await fetch(`http://localhost:3000/tasks/${taskId}`, {
+            await fetch(`${API_URL}/tasks/${taskId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status: newStatus }),
             });
         } else if (e.target.classList.contains("delete-btn")) {
-            await fetch(`http://localhost:3000/tasks/${taskId}`, { method: "DELETE" });
+            await fetch(`${API_URL}/tasks/${taskId}`, { method: "DELETE" });
             taskElement.remove();
         }
     });
