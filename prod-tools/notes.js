@@ -1,15 +1,15 @@
+const API_URL = "https://productintaebackend1-0.onrender.com";
+
 const addNoteBtn = document.getElementById("add-note-btn");
 const viewNotesBtn = document.getElementById("view-notes-btn");
 const notesList = document.getElementById("notes-list");
 const noteContent = document.getElementById("note-content");
 
-
 async function fetchNotes() {
-    const response = await fetch("http://localhost:3000/notes");
+    const response = await fetch(`${API_URL}/notes`);
     const notes = await response.json();
     renderNotesList(notes);
 }
-
 
 function renderNotesList(notes) {
     notesList.innerHTML = "";
@@ -21,7 +21,6 @@ function renderNotesList(notes) {
         noteTitle.textContent = note.title;
         noteItem.appendChild(noteTitle);
 
-        
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("delete-btn");
@@ -34,16 +33,14 @@ function renderNotesList(notes) {
     });
 }
 
-
 async function viewNoteContent(noteId) {
-    const response = await fetch(`http://localhost:3000/notes/${noteId}`);
+    const response = await fetch(`${API_URL}/notes/${noteId}`);
     const note = await response.json();
     noteContent.innerHTML = `
         <h3>${note.title}</h3>
         <p>${note.content}</p>
     `;
 }
-
 
 async function addNewNote() {
     const title = prompt("Enter the title for the note:");
@@ -54,34 +51,34 @@ async function addNewNote() {
 
     const newNote = { title, content };
 
-    const response = await fetch("http://localhost:3000/notes", {
+    const response = await fetch(`${API_URL}/notes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newNote),
     });
 
-    const savedNote = await response.json();
-    alert("Note added successfully!");
-    fetchNotes();  
+    if (response.ok) {
+        alert("Note added successfully!");
+        fetchNotes();
+    } else {
+        alert("Error adding note!");
+    }
 }
 
-
 async function deleteNote(noteId) {
-    const response = await fetch(`http://localhost:3000/notes/${noteId}`, {
+    const response = await fetch(`${API_URL}/notes/${noteId}`, {
         method: "DELETE",
     });
 
     if (response.ok) {
         alert("Note deleted successfully!");
-        fetchNotes();  
+        fetchNotes();
     } else {
         alert("Error deleting note!");
     }
 }
 
-
 addNoteBtn.addEventListener("click", addNewNote);
 viewNotesBtn.addEventListener("click", fetchNotes);
-
 
 fetchNotes();
