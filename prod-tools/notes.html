@@ -6,16 +6,25 @@
     <title>Notes</title>
     <link rel="stylesheet" href="./notes.css"/>
 </head>
-<body>
-    <h1>Notes</h1>
-    <p>Noteworthy 🖋️—where your thoughts always make the highlight reel!</p>
+<body style="background-image: url('notes.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <header>
+        <h1>Notes</h1>
+        <p>Noteworthy 🖋️—where your thoughts always make the highlight reel!.</p>
+    </header>
     
-    <button id="add-note-btn">Add New Note</button>
-    <button id="view-notes-btn">View Previous Notes</button>
+    <div class="actions">
+        <button id="add-note-btn">Add New Note</button>
+        <button id="view-notes-btn">View Previous Notes</button>
+    </div>
     
-    <div id="notes-list"></div>
-    <div id="note-content"></div>
+    <section id="notes-list"></section>
+    <section id="note-content" class="content-display"></section>
 
     <script src="./notes.js"></script>
 </body>
 </html>
+
+
+
+
+
