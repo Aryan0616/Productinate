@@ -24,13 +24,13 @@ header {
 
 h1 {
     font-size: 2.5rem;
-    color: #4CAF50;
+    color: #c54747;
     font-weight: bold;
 }
 
 p {
     font-size: 1.1rem;
-    color: #555;
+    color: #d8aaaa;
     margin-top: 10px;
 }
 
@@ -42,7 +42,7 @@ p {
 
 
 button {
-    background-color: #4CAF50;
+    background-color: #ed7c7c59;
     color: white;
     padding: 12px 20px;
     font-size: 1rem;
@@ -54,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #ed7c7c59;
 }
 
 button:focus {
