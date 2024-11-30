@@ -38,7 +38,7 @@ hr {
     display: block;
     text-decoration: none;
     color: #fff;
-    background-color: #ff7f50; 
+    background-color: #4d94ff9e; 
     border: 1px solid #ddd;
     border-radius: 12px; 
     padding: 25px;
@@ -51,7 +51,7 @@ hr {
 .tool-block:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #FF6F61, #FF8E53); 
+    background: linear-gradient(135deg, #4d94ff9e, #4d94ff9e); 
 }
 
 .tool-block h3 {
