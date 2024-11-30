@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro</title>
+    <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="./pomodoro.css">
 </head>
-<body>
+<body style="background-image: url('pomodoro.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
     <h1>Pomodoro Timer</h1>
     <p>"Pomodo-more" 🍅—helping you focus and get more done, one tomato at a time!</p>
 
     <div id="Pomodoro">
         <h2 id="timer-label">Work Time</h2>
-        <div id="timer-display">25:00</div>
+
+        <!-- Circular progress container -->
+        <div id="progress-circle">
+            <div id="timer-display">25:00</div>
+        </div>
+
         <div class="timer-controls">
             <button id="start-btn">Start</button>
             <button id="pause-btn" disabled>Pause</button>
-            <button id="reset-btn">Reset</button>
+            <button id="reset-btn" disabled>Reset</button>
         </div>
         <div class="timer-settings">
             <h3>Customize Timer</h3>
@@ -31,6 +36,10 @@
         </div>
     </div>
 
+    <!-- Alarm Sound -->
+    <audio id="alarm-sound" src="Sample audio.mp3" preload="auto"></audio>
+
     <script src="./pomodoro.js"></script>
 </body>
 </html>
+
