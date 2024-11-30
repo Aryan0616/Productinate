@@ -3,59 +3,79 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #2c2f54; 
+    color: #ffffff; 
 }
 
 h1 {
     font-size: 2.5rem;
     margin-top: 20px;
-    color: #ff6347; 
+    color: #ffd700; /* Bright gold */
 }
 
 p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #555;
+    color: #d1d1e0; /* Light grayish-blue */
 }
 
+/* Circular Progress Bar */
+#progress-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 3px auto;
+    background: conic-gradient(
+        #4caf50 10%,   /* Green for progress */
+        #ffffff 10%    /* White for remaining */
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
 
 #timer-display {
-    font-size: 4rem;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #ffffff; /* Dark purple */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #ff6347;
-    margin: 20px 0;
-    padding: 10px;
-    border: 3px solid #ff6347;
-    border-radius: 8px;
-    display: inline-block;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffd700; /* Gold */
+    border: 3px solid #ffd700; /* Matching gold border */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-
+/* Timer Controls */
 .timer-controls button {
+    position: relative;
     font-size: 1rem;
     padding: 10px 20px;
-    margin: 10px;
+    margin: 20px;
     border: none;
     border-radius: 5px;
-    background-color: #ff6347;
-    color: #fff;
+    background-color: #ff6347; /* Bright orange */
+    color: #ffffff; /* White text */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .timer-controls button:disabled {
-    background-color: #ccc;
+    background-color: #555555; /* Neutral gray */
     cursor: not-allowed;
 }
 
 .timer-controls button:hover:not(:disabled) {
-    background-color: #ff4500;
+    background-color: #e5533b; /* Darker orange on hover */
 }
 
-
+/* Timer Settings */
 .timer-settings {
     margin-top: 30px;
     text-align: center;
@@ -63,7 +83,7 @@ p {
 
 .timer-settings h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: #ffd700; /* Gold */
     margin-bottom: 10px;
 }
 
@@ -71,7 +91,7 @@ p {
     display: block;
     margin: 10px 0;
     font-size: 1rem;
-    color: #555;
+    color: #d1d1e0; /* Light grayish-blue */
 }
 
 .timer-settings input {
@@ -79,17 +99,18 @@ p {
     padding: 5px;
     width: 60px;
     text-align: center;
-    border: 2px solid #ddd;
+    border: 2px solid #ffd700; /* Gold border */
     border-radius: 5px;
     margin-left: 10px;
+    background-color: #1c1e3d; /* Dark purple */
+    color: #ffd700; /* Gold text */
     transition: border-color 0.3s;
 }
 
 .timer-settings input:focus {
-    border-color: #ff6347;
+    border-color: #ff6347; /* Orange focus border */
     outline: none;
 }
-
 
 @media (max-width: 768px) {
     h1 {
