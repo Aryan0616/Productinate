@@ -34,18 +34,18 @@ form input[type="text"] {
     width: 300px;
     padding: 10px;
     font-size: 1rem;
-    border: 2px solid #4caf50;
+    border: 2px solid #1100ff;
     border-radius: 5px;
     outline: none;
     transition: border-color 0.3s ease;
 }
 
 form input[type="text"]:focus {
-    border-color: #388e3c;
+    border-color: #1100ff;
 }
 
 form button {
-    background-color: #4caf50;
+    background-color: #1100ff;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -56,7 +56,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #388e3c;
+    background-color: #1100ff;
     transform: translateY(-2px);
 }
 
@@ -88,7 +88,7 @@ form button:hover {
 .task input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: #4caf50;
+    accent-color: #1100ff;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -115,7 +115,7 @@ form button:hover {
 .task button.delete-btn {
     background: none;
     border: none;
-    color: #ff6347;
+    color: #1100ff;
     font-size: 1.2rem;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease;
